@@ -35,8 +35,8 @@ var load = function(t, tags, expected) {
     _.isEqual(input, expected),
     'load YAML and compare with JSON',
     {
-      input: util.inspect(input),
-      expected: util.inspect(expected)
+      input: util.inspect(input, false, 15),
+      expected: util.inspect(expected, false, 15)
     }
   );
 };
@@ -50,9 +50,9 @@ var dumpAndLoad = function(t, input) {
     _.isEqual(input, output),
     'dump, load, and compare with the original',
     {
-      inputJs: util.inspect(input),
+      inputJs: util.inspect(input, false, 15),
       yaml: data,
-      outputJs: util.inspect(output)
+      outputJs: util.inspect(output, false, 15)
     }
   );
 };
